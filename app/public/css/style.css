@@ -1,5 +1,6 @@
 .body-index{
-	background: #010101;
+	background-image: url('../images/enigma.png'); 
+	background-size: cover;  
 }
 
 .body-jogo{

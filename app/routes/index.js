@@ -1,5 +1,6 @@
+//Route da index 
 module.exports = function(application){
-	application.get('/', function(req, res){
-		res.render('../views/index.ejs');
+	application.get('/', function(request, response){
+		response.render('../views/index.ejs');
 	});
 }
