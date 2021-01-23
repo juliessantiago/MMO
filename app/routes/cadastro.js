@@ -1,6 +1,7 @@
 //Route do cadastro 
-module.exports = function(application){
+module.exports = function(application){ //application = objeto do servidor
     application.get('/cadastro', function(request, response){
-        response.render('../views/cadastro.ejs'); 
+        console.log('chamando controller de cadastro')
+       application.app.controllers.cadastro.MostraCadastro(application, request, response)
     })
 }
