@@ -1,5 +1,7 @@
+//Route de jogo
 module.exports = function(application){
     application.get('/jogo', function(request, response){
-        response.render('../views/jogo.ejs'); 
+        console.log('Chamando controller do jogo'); 
+        application.app.controllers.jogo.mostraJogo(application, request, response)
     })
 }
