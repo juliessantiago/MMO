@@ -17,7 +17,7 @@
 	</head>
 
 	<body class="body-index">
-
+		
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
 				<form class="form-inline form-entrar">
@@ -30,28 +30,40 @@
 		</nav>
 
 	    <div class="container">
-	    		
-			<form class="form-cadastro">
+			<% 
+			if(validacao.length > 0){%>
+				<div class="alert alert-danger h4">Ops! O formulário esta com erros
+				<ul>
+				<% for(let i= 0; i< validacao.length; i++){ 
+					console.log (validacao) %> 
+					<li class="h5"><%=validacao[i].msg %> </li> 
+				<%} %> 
+				<!--propriedades do objeto validacao: 
+				params, msg, value -->
+				</ul> </div>
+		<% } %> 
+			
+			<form class="form-cadastro" action="/cadastrar" method="POST">
 			
 				<div class="row">
 					<div class="col-xs-4">
 						<div class="form-group">
 							<label for="nome" class="col-sm-2 col-form-label">Nome</label>
-							<input type="nome" class="form-control" id="nome" placeholder="Nome">
+							<input class="form-control" id="nome" placeholder="Nome" name="nome">
 						</div>
 					</div>
 					
 					<div class="col-xs-4">
 						<div class="form-group">
 							<label for="usuario" class="col-sm-2 col-form-label">Usuário</label>
-							<input type="usuario" class="form-control" id="usuario" placeholder="Usuário">
+							<input class="form-control" id="usuario" placeholder="Usuário" name="user">
 						</div>
 					</div>
 					
 					<div class="col-xs-4">
 						<div class="form-group">
 							<label for="senha" class="col-sm-2 col-form-label">Senha</label>
-							<input type="password" class="form-control" id="senha" placeholder="Password">
+							<input type="password" class="form-control" id="senha" placeholder="Password" name="senha">
 						</div>
 					</div>
 				</div>
