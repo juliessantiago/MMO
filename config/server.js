@@ -31,6 +31,8 @@ consign()
 	.include('app/routes')
 	.then('app/models')
 	.then('app/controllers')
+	.then('config/database.js')//arquivo de configuração do banco de dados. 
+	//Passa-se a extensão para não confundir com um diretório
 	.into(app);
 
 /* exportar o objeto app */

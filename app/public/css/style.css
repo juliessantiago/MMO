@@ -2,7 +2,9 @@
 	background-image: url('../images/game-of-thrones-wallpaper.jpg'); 
 	background-size: cover;  
 }
-
+.body-cadastro{
+	background-color: #333333;
+}
 .body-jogo{
 	background-image: url('../images/mapa.gif');
 	background-position: center;

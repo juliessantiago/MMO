@@ -1,7 +1,7 @@
 //controller de cadastro 
 
 module.exports.mostraCadastro = function (application, request, response){ // mostra página de cadastro
-    response.render('cadastro', {validacao :{}})
+    response.render('cadastro', {validacao :{}}) //json vai vazio, porque aqui ainda não há erros para carregar
     //Não é necessário colocar .EJS 
     /*estou passando aqui a variável validação porque seu conteúdo é testado na página, 
     então é necessário que ela exista*/ 
@@ -20,7 +20,11 @@ module.exports.cadastrar = function (application, request, response){
     if(erros){
         response.render('cadastro', {validacao : erros }) //renderiza a view cadastro enviando uma variável de erros 
         return; //evitando que processo continue 
-    }else {
-        response.send('Cadastrando...')
     }
+
+    var usuariosDAO = new application.app.models.UsuariosDAO; 
+    //Criando nova instância do objeto dentro da classe UsuariosDAO através 
+    //da instância do objeto do servidor (app) que contém os módulos já carregados 
+    //pelo Consign 
+    response.send('Cadastrando...')
 }
